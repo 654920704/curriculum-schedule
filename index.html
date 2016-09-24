@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<link rel="shortcut icon" href="1.png"/>-->
+        <!--<link rel="bookmark" href="1.png"/>-->
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+        <meta name="author" content="李沛峰">
+        <title>课程表</title>
+        
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <header>课程表</header>
+        <div id="content"></div>
+        <script id="table" type="text/html">
+        <table>
+            <tr>
+                <th>节数</th>
+                <th>周一</th>
+                <th>周二</th>
+                <th>周三</th>
+                <th>周四</th>
+                <th>周五</th>
+            </tr>
+            {{each list as value i}}
+            <tr>
+                <td><a href="class.html?{{value.id}}">{{value.num}}</a></td>
+                <td>{{value.mon}}</td>
+                <td>{{value.tue}}</td>
+                <td>{{value.wed}}</td>
+                <td>{{value.thu}}</td>
+                <td>{{value.fri}}</td>
+            </tr>
+            {{/each}}
+        </table>
+        <a href="class.html?add" id="add"><button onclick="add()" > 添加</button></a>
+        </script>
+        <script src="js/template.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
